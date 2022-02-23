@@ -1,29 +1,32 @@
 package sk.stuba.fei.uim.oop;
 
-import java.util.Objects;
-import java.util.Scanner;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner klavesnica = new Scanner(System.in);
+        int x = 5;
+        int[] y = new int[]{1, 2, 3};
 
-        String a = "a";
-        String b = "a";
+        System.out.println(x);
+        testPrimitive(x);
+        System.out.println(x);
 
-        System.out.printf("zadaj pismeno:");
-        String c= klavesnica.nextLine();
+        System.out.println(Arrays.toString(y));
+        testArray(y);
+        System.out.println(Arrays.toString(y));
+    }
 
-        System.out.println("a == a:" +(a==a));
-        System.out.println("a == b:" +(a.equals(b)));
-        System.out.println("a == c:" +(a==c));
+    public static void testPrimitive(int cislo) {
+        cislo = 10;
+        System.out.println(cislo);
+    }
 
-        System.out.println("a.equals(a)" +(a.equals(a)));
-        System.out.println("a.equals(b)" +(a.equals(b)));
-        System.out.println("a.equals(c)" +(a.equals(c)));
-
-        System.out.println("Objects.equals(a, a):" + Objects.equals(a, a));
-        System.out.println("Objects.equals(a, a):" + Objects.equals(a, b));
-        System.out.println("Objects.equals(a, a):" + Objects.equals(a, c));
+    public static void testArray(int @NotNull [] array) {
+        array[0] = 10;
+        System.out.println(Arrays.toString(array));
     }
 }
